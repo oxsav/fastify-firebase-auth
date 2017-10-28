@@ -1,0 +1,20 @@
+{
+  "name": "fastify-firebase-auth",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && tap test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify-plugin": "^0.1.1",
+    "firebase": "^4.6.0"
+  },
+  "devDependencies": {
+    "fastify": "^0.30.3",
+    "standard": "^10.0.3",
+    "tap": "^10.7.2"
+  }
+}
