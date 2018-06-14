@@ -9,12 +9,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fastify-plugin": "^0.1.1",
-    "firebase": "^4.6.0"
+    "fastify-plugin": "^1.1.2",
+    "firebase": "^5.0.4"
   },
   "devDependencies": {
-    "fastify": "^0.30.3",
-    "standard": "^10.0.3",
-    "tap": "^10.7.2"
+    "fastify": "^1.6.0",
+    "standard": "^11.0.1",
+    "tap": "^12.0.1"
   }
 }

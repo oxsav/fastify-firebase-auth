@@ -26,82 +26,82 @@ function fastifyFirebaseAuth (fastify, options, next) {
 
   fastify.decorate('auth', {
     applyActionCode: (code) => auth()
-        .applyActionCode(code)
-        .catch(setError),
+      .applyActionCode(code)
+      .catch(setError),
 
     checkActionCode: (code) => auth()
-        .checkActionCode(code)
-        .catch(setError),
+      .checkActionCode(code)
+      .catch(setError),
 
     confirmPasswordReset: (code, newPass) => auth()
-        .confirmPasswordReset(code, newPass)
-        .catch(setError),
+      .confirmPasswordReset(code, newPass)
+      .catch(setError),
 
     createUserWithEmailAndPassword: (email, password) => auth()
-        .createUserWithEmailAndPassword(email, password)
-        .catch(setError),
+      .createUserWithEmailAndPassword(email, password)
+      .catch(setError),
 
     fetchProvidersForEmail: (email) => auth()
-        .fetchProvidersForEmail(email)
-        .catch(setError),
+      .fetchProvidersForEmail(email)
+      .catch(setError),
 
     getRedirectResult: (nextOrObserver, error, completed) => auth()
-        .getRedirectResult(nextOrObserver, error, completed),
+      .getRedirectResult(nextOrObserver, error, completed),
 
     onIdTokenChanged: (nextOrObserver, error, completed) => auth()
-        .onAuthStateChanged(nextOrObserver, error, completed),
+      .onAuthStateChanged(nextOrObserver, error, completed),
 
     sendPasswordResetEmail: (email, actionCodeSettings) => auth()
-        .sendPasswordResetEmail(email, actionCodeSettings)
-        .catch(setError),
+      .sendPasswordResetEmail(email, actionCodeSettings)
+      .catch(setError),
 
     setPersistence: (persistence) => auth()
-        .setPersistence(persistence)
-        .catch(setError),
+      .setPersistence(persistence)
+      .catch(setError),
 
     signInAndRetrieveDataWithCredential: (credential) => auth()
-        .signInAndRetrieveDataWithCredential(credential)
-        .catch(setError),
+      .signInAndRetrieveDataWithCredential(credential)
+      .catch(setError),
 
     signInWithCredential: (credential) => auth()
-        .signInWithCredential(credential)
-        .catch(setError),
+      .signInWithCredential(credential)
+      .catch(setError),
 
     signInAnonymously: () => auth()
-        .signInAnonymously()
-        .catch(setError),
+      .signInAnonymously()
+      .catch(setError),
 
     signInWithCustomToken: (token) => auth()
-        .signInWithCustomToken(token)
-        .catch(setError),
+      .signInWithCustomToken(token)
+      .catch(setError),
 
     signInWithEmailAndPassword: (email, password) => auth()
-        .signInWithEmailAndPassword(email, password)
-        .catch(setError),
+      .signInWithEmailAndPassword(email, password)
+      .catch(setError),
 
     signInWithPhoneNumber: (phoneNumber, applicationVerifier) => auth()
-        .signInWithPhoneNumber(phoneNumber, applicationVerifier)
-        .catch(setError),
+      .signInWithPhoneNumber(phoneNumber, applicationVerifier)
+      .catch(setError),
 
     signInWithPopup: (provider) => auth()
-        .signInWithPopup(provider)
-        .catch(setError),
+      .signInWithPopup(provider)
+      .catch(setError),
 
     signInWithRedirect: (provider) => auth()
-        .signInWithRedirect(provider)
-        .catch(setError),
+      .signInWithRedirect(provider)
+      .catch(setError),
 
     signOut: () => auth()
-        .signOut()
-        .catch(setError),
+      .signOut()
+      .catch(setError),
 
     useDeviceLanguage: (e, p) => auth()
-        .useDeviceLanguage(e, p)
-        .catch(setError),
+      .useDeviceLanguage(e, p)
+      .catch(setError),
 
     verifyPasswordResetCode: (code) => auth()
-        .verifyPasswordResetCode(code)
-        .catch(setError)
+      .verifyPasswordResetCode(code)
+      .catch(setError)
   })
 
   next()
