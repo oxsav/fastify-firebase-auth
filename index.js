@@ -4,16 +4,6 @@ const fp = require('fastify-plugin')
 const Firebase = require('firebase')
 
 /**
- * Set response when an error happens
- * @method fastifyFirebaseAuth
- * @param {Object} fastify - fastify instance
- */
-const setError = error => ({
-  statusCode: error.code,
-  message: error.message
-})
-
-/**
  * @method fastifyFirebaseAuth
  * @param {Object} fastify - fastify instance
  * @param {Object} options - options to set fastify service
@@ -26,24 +16,19 @@ function fastifyFirebaseAuth (fastify, options, next) {
 
   fastify.decorate('auth', {
     applyActionCode: (code) => auth()
-      .applyActionCode(code)
-      .catch(setError),
+      .applyActionCode(code),
 
     checkActionCode: (code) => auth()
-      .checkActionCode(code)
-      .catch(setError),
+      .checkActionCode(code),
 
     confirmPasswordReset: (code, newPass) => auth()
-      .confirmPasswordReset(code, newPass)
-      .catch(setError),
+      .confirmPasswordReset(code, newPass),
 
     createUserWithEmailAndPassword: (email, password) => auth()
-      .createUserWithEmailAndPassword(email, password)
-      .catch(setError),
+      .createUserWithEmailAndPassword(email, password),
 
     fetchProvidersForEmail: (email) => auth()
-      .fetchProvidersForEmail(email)
-      .catch(setError),
+      .fetchProvidersForEmail(email),
 
     getRedirectResult: (nextOrObserver, error, completed) => auth()
       .getRedirectResult(nextOrObserver, error, completed),
@@ -52,56 +37,43 @@ function fastifyFirebaseAuth (fastify, options, next) {
       .onAuthStateChanged(nextOrObserver, error, completed),
 
     sendPasswordResetEmail: (email, actionCodeSettings) => auth()
-      .sendPasswordResetEmail(email, actionCodeSettings)
-      .catch(setError),
+      .sendPasswordResetEmail(email, actionCodeSettings),
 
     setPersistence: (persistence) => auth()
-      .setPersistence(persistence)
-      .catch(setError),
+      .setPersistence(persistence),
 
     signInAndRetrieveDataWithCredential: (credential) => auth()
-      .signInAndRetrieveDataWithCredential(credential)
-      .catch(setError),
+      .signInAndRetrieveDataWithCredential(credential),
 
     signInWithCredential: (credential) => auth()
-      .signInWithCredential(credential)
-      .catch(setError),
+      .signInWithCredential(credential),
 
     signInAnonymously: () => auth()
-      .signInAnonymously()
-      .catch(setError),
+      .signInAnonymously(),
 
     signInWithCustomToken: (token) => auth()
-      .signInWithCustomToken(token)
-      .catch(setError),
+      .signInWithCustomToken(token),
 
     signInWithEmailAndPassword: (email, password) => auth()
-      .signInWithEmailAndPassword(email, password)
-      .catch(setError),
+      .signInWithEmailAndPassword(email, password),
 
     signInWithPhoneNumber: (phoneNumber, applicationVerifier) => auth()
-      .signInWithPhoneNumber(phoneNumber, applicationVerifier)
-      .catch(setError),
+      .signInWithPhoneNumber(phoneNumber, applicationVerifier),
 
     signInWithPopup: (provider) => auth()
-      .signInWithPopup(provider)
-      .catch(setError),
+      .signInWithPopup(provider),
 
     signInWithRedirect: (provider) => auth()
-      .signInWithRedirect(provider)
-      .catch(setError),
+      .signInWithRedirect(provider),
 
     signOut: () => auth()
-      .signOut()
-      .catch(setError),
+      .signOut(),
 
     useDeviceLanguage: (e, p) => auth()
-      .useDeviceLanguage(e, p)
-      .catch(setError),
+      .useDeviceLanguage(e, p),
 
     verifyPasswordResetCode: (code) => auth()
       .verifyPasswordResetCode(code)
-      .catch(setError)
   })
 
   next()
